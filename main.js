@@ -125,12 +125,18 @@ function setFocus(e){
 // name and focus
 userName.addEventListener('keypress',setName);
 userName.addEventListener('blur', setName);
+userName.addEventListener('click', () => {
+        if(userName.innerHTML == '[Enter name]'){
+        userName.innerHTML = ''
+    }
+})
 focus.addEventListener('keypress',setFocus);
 focus.addEventListener('blur', setFocus);
 // Make the focus box editable after user clicks edit button
 editFocus.addEventListener('click',()=>{
     focus.setAttribute("contenteditable", true);
     focus.focus();
+    focus.innerHTML = '';
 });
 // show/hide todo list
 toDoBtn.addEventListener('click', ()=>{

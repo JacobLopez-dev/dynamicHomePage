@@ -96,6 +96,8 @@ main{
 .todo .todo-text{
     margin-left: 5px;
     font-size: 1.2rem;
+    width: 300px;
+    overflow: auto;
 }
 
 .todo .delete{
