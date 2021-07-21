@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    color: white;
+}
+
+h1{
+    margin-bottom: 25px;
+}
+
+/* Div which contains the location and temperature, description part of parent div */
+#weather-info{
+    display: flex;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+/* Navigation where todo list button and weather data will be displayed */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    padding: 10px;
+}
+
+nav li{
+    list-style: none;
+    
+}
+
+/* Main content section, centers everything in the middle */
+main{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.todo-list{
+    color: white;
+    position: absolute;
+    top: 11vh;
+    left: 10px;
+    border-radius: 15px 15px 15px 15px;
+    transition: all 0.3s ease-out;
+    background: rgba( 255, 255, 255, 0.20 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 15.5px );
+    -webkit-backdrop-filter: blur( 15.5px );
+    border-radius: 10px;
+}
+
+.hide{
+    left: -400px;
+}
+
+.todo-header{
+    width: 380px;
+    height:200px;
+    border-radius: 15px 15px 0 0;
+    padding: 10px;
+    color: white;
+    background: rgb(24,67,160);
+    background: linear-gradient(0deg, rgba(24,67,160,1) 18%, rgba(89,194,214,1) 100%);
+    
+}
+
+.todays-date{
+    font-size: 1.2rem;
+}
+
+.todo-body{
+    height: 150px;
+    overflow: scroll;
+}
+
+.todo{
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.349);
+}
+
+.todo .complete{
+    cursor: pointer;
+}
+
+.todo .todo-text{
+    margin-left: 5px;
+    font-size: 1.2rem;
+}
+
+.todo .delete{
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.todo .delete:hover{
+    color: rgb(185, 2, 2)
+}
+
+.todo-footer{
+    border-top: 1px solid rgba(255, 255, 255, 0.349);
+    padding: 5px;
+}
+
+.todo-footer button{
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    margin-left: 5px;
+    color: white;
+}
+
+.todo-input{
+    width: 100%;
+    padding: 5px;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.todo-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+
+.todo-input::placeholder{
+    color: rgba(255, 255, 255, 0.315);
+}
+
+.add-todo{
+    cursor: pointer;
+}
+
+.add-todo:hover{
+    color: rgba(20, 75, 255, 0.842);
+}
+
+/* To do list button */
+.toDoBtn{
+    background: transparent;
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    border: 2px solid transparent;
+    font-size: 1.2rem;
+}
+
+.toDoBtn:hover{
+    border-bottom: 2px solid white;
+}
+
+
+/* element to display time */
+#time{
+    font-size: 8rem;
+}
+
+#name:hover{
+    cursor: pointer;
+}
+
+.focus{
+    text-align: center;
+}
+
+.focus-fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 15px;
+    border-bottom: 2px solid white;
+}
+
+/* focus input */
+#focus-input{
+    width: 100%;
+}
+
+.edit-focus:hover{
+    cursor: pointer;
+}

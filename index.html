@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <!-- Site navigation -->
+        <nav>
+            <!-- activate todo list -->
+            <li><button class="toDoBtn">To-do List</button></li>
+            <li>
+                <!-- Parent div containing weather data -->
+                <div class="weather">
+                    <!-- Location and current temp -->
+                    <div id="weather-info">
+                        <p id="tempLocation"></p>
+                        <p id="tempDegree"></p>
+                    </div>
+                    <!-- weather description -->
+                    <p id="description"></p>
+                </div>
+                <!-- end weather div -->
+            </li>
+        </nav>
+    </header>
+    <main>
+        <!-- todo list container -->
+        <div class="todo-list hide">
+            <div class="todo-header">
+                <h1>Today's todo list</h1>
+                <p class="todays-date">Today's date</p>
+            </div>
+            <div class="todo-body">
+                <!-- <div class="todo">
+                    <i class="far fa-circle fa-lg complete" job="complete" id=0></i>
+                    <p class="todo-text">test</p>
+                    <i class="fa fa-trash fa-lg delete" job="delete" id="0"></i>
+                </div> -->
+            </div>
+            <div class="todo-footer">
+                <form action="" class="todo-form">
+                    <input class="todo-input" type="text" placeholder="Add to-do">
+                    <button type="submit"><i class="fa fa-plus-circle fa-2x add-todo"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Display current time -->
+        <time id="time"></time>
+        <!-- display greeting based on time of day and users name stored in local storage -->
+        <h1>
+            <span id="greeting"></span>
+            <span id="name" contenteditable="true"></span>
+        </h1>
+        <!-- Todays focus -->
+        <div class="focus">
+            <h2>What is your Focus for today?</h2>
+            <div class="focus-fields">
+                <h2 id="focus-input" contenteditable="false"></h2>
+                <i class="far fa-edit edit-focus"></i>
+            </div>
+        </div>
+    </main>
+
+    <!-- Template for tasks. Populate this template and place it into a task list -->
+    <template id="todo-template">
+        <div class="todo">
+            <i class="far fa-circle fa-lg complete" job="complete" id="0"></i>
+            <p class="todo-text"></p>
+            <i class="fa fa-trash fa-lg delete" job="delete" id="0"></i>
+        </div>
+    </template>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
