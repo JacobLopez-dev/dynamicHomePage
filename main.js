@@ -79,7 +79,7 @@ function setGreet(){
 /********************************* Get/Set name and focus **********************************/
 //Get Name if there is one, if this is the first time display 'enter name'
 function getName(){
-    if(localStorage.getItem('homepage.name') === null){
+    if(localStorage.getItem('homepage.name') === null || localStorage.getItem('homepage.name') == ''){
         userName.textContent = '[Enter name]';
     }else{
         userName.textContent = localStorage.getItem('homepage.name');
@@ -167,7 +167,6 @@ window.addEventListener('load', ()=>{
             fetch(api).then(response =>{
                 return response.json();
             }).then(data => {
-                console.log(data);
                 const {name} = data;
                 const {temp} = data.main;
                 const description = data.weather[0].description;
@@ -195,12 +194,12 @@ toDoForm.addEventListener('submit', e =>{
     const task = createToDo(taskName);
     taskInput.value = null;
     list.push(task)
-    console.log(list)
     saveAndRender()
 });
 
 todoBody.addEventListener("click", (e) =>{
     const element = e.target;
+    console.log(element)
     const elementJob = element.attributes.job.value;
     const elementId = element.attributes.id.value;
     const nextSibling = element.nextSibling.nextSibling;
@@ -223,6 +222,7 @@ todoBody.addEventListener("click", (e) =>{
            nextSibling.style.color = 'white';
         }
     }
+    
 });
 
 function save(){
@@ -240,7 +240,6 @@ function renderList(){
         todoBody.appendChild(taskElement)
         completeTask.attributes.id.value = item.id;
         deleteTask.attributes.id.value = item.id;
-        console.log(item)
     });
 }
 

@@ -8,9 +8,14 @@
 
 body{
     color: white;
+    background: no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-h1{
+.user-name{
     margin-bottom: 25px;
 }
 
@@ -45,6 +50,7 @@ main{
 }
 
 .todo-list{
+    width: 380px;
     color: white;
     position: absolute;
     top: 11vh;
@@ -63,7 +69,6 @@ main{
 }
 
 .todo-header{
-    width: 380px;
     height:200px;
     border-radius: 15px 15px 0 0;
     padding: 10px;
@@ -173,6 +178,7 @@ main{
     cursor: pointer;
 }
 
+/* Focus */
 .focus{
     text-align: center;
 }
@@ -184,13 +190,34 @@ main{
     gap: 5px;
     margin-top: 15px;
     border-bottom: 2px solid white;
+    padding: 5px;
+    
 }
 
 /* focus input */
 #focus-input{
-    width: 100%;
+    max-width: 100%;
 }
 
 .edit-focus:hover{
     cursor: pointer;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #time{
+      font-size: 5em;
+  }
+
+  .user-name{
+    font-size: 1.5em;
+  }
+
+  .todo-list{
+      max-width: 80vw;
+  }
+  .todo-header{
+      max-width: 80vw;
+  }
+
+
 }
