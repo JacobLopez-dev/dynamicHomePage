@@ -84,7 +84,7 @@ main{
 
 .todo-body{
     height: 150px;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .todo{
