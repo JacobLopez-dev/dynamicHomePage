@@ -41,11 +41,11 @@ function showTime(){
     sec = today.getSeconds();
 
     hour = hour % 12 || 12;
-    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
+    time.innerHTML = `${hour}<span>:</span>${addZero(min)}`;
     // time.innerHTML = `${hour}<span>:</span>${(min)}`; no seconds
     currentDate.innerHTML = `${today.toLocaleDateString('en-US',{ weekday: 'long', month: 'long', day: 'numeric' })}`;
 
-    setTimeout(showTime, 1000);
+    setTimeout(showTime, 3000);
 }
 
 //Add 0 to min and seconds 

@@ -197,6 +197,7 @@ main{
 /* focus input */
 #focus-input{
     max-width: 100%;
+    width: 100%;
 }
 
 .edit-focus:hover{
