@@ -162,10 +162,13 @@ main{
     color: #fff;
     border: 2px solid transparent;
     font-size: 1.2rem;
+    
 }
 
 .toDoBtn:hover{
     border-bottom: 2px solid white;
+    transition: ease-in-out;
+    transition-duration: .5s;
 }
 
 

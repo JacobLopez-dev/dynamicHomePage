@@ -1,4 +1,4 @@
-const apiKey = '88f174139b8cf814e909e31e0e29215c';
+const WEATHER_API_KEY = '88f174139b8cf814e909e31e0e29215c';
 const TODO_LIST_STORAGE_KEY = 'homepage.todo';
 let list = JSON.parse(localStorage.getItem(TODO_LIST_STORAGE_KEY)) || [];
 
@@ -58,6 +58,7 @@ function addZero(n){
 function setGreet(){
     let today = new Date();
     let hour = today.getHours();
+
     if(hour < 12){
         //Good morning
         document.body.style.backgroundImage = "url('./images/morning.jpg')";
@@ -80,7 +81,7 @@ function setGreet(){
 //Get Name if there is one, if this is the first time display 'enter name'
 function getName(){
     if(localStorage.getItem('homepage.name') === null || localStorage.getItem('homepage.name') == ''){
-        userName.textContent = '[Enter name]';
+        userName.textContent = 'Click to edit name';
     }else{
         userName.textContent = localStorage.getItem('homepage.name');
     }
@@ -100,8 +101,8 @@ function setName(e){
 
 //Get Focus, if this is the first time display 'enter focus'
 function getFocus(){
-    if(localStorage.getItem('homepage.focus') === null){
-        focus.textContent = '[Enter focus]';
+    if(localStorage.getItem('homepage.focus') === null || localStorage.getItem('homepage.focus') === ''){
+        focus.textContent = 'Enter focus';
     }else{
         focus.textContent = localStorage.getItem('homepage.focus');
     }
@@ -126,7 +127,7 @@ function setFocus(e){
 userName.addEventListener('keypress',setName);
 userName.addEventListener('blur', setName);
 userName.addEventListener('click', () => {
-        if(userName.innerHTML == '[Enter name]'){
+        if(userName.innerHTML == 'Click to edit name'){
         userName.innerHTML = ''
     }
 })
@@ -134,9 +135,11 @@ focus.addEventListener('keypress',setFocus);
 focus.addEventListener('blur', setFocus);
 // Make the focus box editable after user clicks edit button
 editFocus.addEventListener('click',()=>{
+    if(focus.innerHTML == 'Enter focus'){
+        focus.innerHTML = ''
+    }
     focus.setAttribute("contenteditable", true);
     focus.focus();
-    focus.innerHTML = '';
 });
 // show/hide todo list
 toDoBtn.addEventListener('click', ()=>{
@@ -160,11 +163,11 @@ window.addEventListener('load', ()=>{
         navigator.geolocation.getCurrentPosition(position=>{
             long = position.coords.longitude;
             lat = position.coords.latitude;
-            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&exclude=hourly&appid=${apiKey}&units=imperial`;
+            const weather_api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&exclude=hourly&appid=${WEATHER_API_KEY}&units=imperial`;
             // The api call below retrieves upcoming forecasts in addition to current weather data. However it only returns timezone and not specific location. Data must be pulled from json through a different method than the fetch below.
-            // const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`; 
+            // const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${WEATHER_API_KEY}&units=imperial`; 
     
-            fetch(api).then(response =>{
+            fetch(weather_api).then(response =>{
                 return response.json();
             }).then(data => {
                 const {name} = data;
